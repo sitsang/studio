@@ -9,7 +9,9 @@
         <dependency>
             <groupId>org-netbeans</groupId>
             <artifactId>org-netbeans-swing-laf-dark</artifactId>
-            <version>1.0</version>
+	    <version>1.0</version>
+	    <scope>system</scope>
+	    <systemPath>${basedir}/lib/org-netbeans-swing-laf-dark-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.jfree</groupId>
@@ -25,8 +27,8 @@
             <groupId>org.netbeans.external</groupId>
             <artifactId>swing-layout</artifactId>
             <version>1.0.4</version>
-            <!--systemPath>${basedir}/lib/swing-layout-1.0.4.jar</systemPath>
-            <scope>system</scope-->
+            <systemPath>${basedir}/lib/swing-layout-1.0.4.jar</systemPath>
+            <scope>system</scope>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
@@ -114,5 +116,5 @@
               </configuration>
             </plugin>
 	</plugins>
-    </build>
+</build>
 </project>
