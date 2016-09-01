@@ -62,7 +62,7 @@ public class SSHManager {
             session=jsch.getSession(userid, host, 22);
             session.setConfig("PreferredAuthentications", "publickey,keyboard-interactive,password");
             session.setUserInfo(ui);
-            session.connect();
+            session.connect(10000);
 
             //int localPort = session.setPortForwardingL(0,"localhost",port);
 
