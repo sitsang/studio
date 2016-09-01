@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.GroupLayout;
 import org.netbeans.editor.SettingsDefaults;
 import studio.kdb.Config;
 import studio.kdb.ConnectionPool;
@@ -304,16 +305,17 @@ public class ServerForm extends EscapeDialog {
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(layout.createSequentialGroup()
                 .addContainerGap()
-                .add(jSplitPane1)
+                .add(jSplitPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 335, Short.MAX_VALUE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jServerRemoveButton)
-                    .add(jServerCloneButton)
                     .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                         .add(okButton)
                         .add(cancelButton)
                         .add(EditColorButton)
-                        .add(testConnButton)))
+                        .add(testConnButton))
+                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, jServerRemoveButton, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, jServerCloneButton, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .add(11, 11, 11))
         );
     }// </editor-fold>//GEN-END:initComponents

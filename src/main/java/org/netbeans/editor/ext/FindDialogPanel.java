@@ -13,6 +13,7 @@
 
 package org.netbeans.editor.ext;
 
+import java.util.ResourceBundle;
 import org.netbeans.editor.LocaleSupport;
 import org.netbeans.editor.SettingsNames;
 
@@ -26,7 +27,7 @@ import javax.swing.*;
 public class FindDialogPanel extends javax.swing.JPanel {
 
     static final long serialVersionUID =5048601763767383114L;
-
+    
     /** Initializes the Form */
     public FindDialogPanel() {
         initComponents ();

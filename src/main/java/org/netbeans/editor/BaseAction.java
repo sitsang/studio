@@ -19,6 +19,7 @@ import javax.swing.text.Caret;
 import javax.swing.text.JTextComponent;
 import javax.swing.text.TextAction;
 import java.awt.event.ActionEvent;
+import java.util.ResourceBundle;
 
 /**
 * This is the parent of majority of the actions. It implements
@@ -81,13 +82,31 @@ public abstract class BaseAction extends TextAction {
     private static StringBuffer textBuffer = new StringBuffer();
 
     static final long serialVersionUID =-4255521122272110786L;
+    private final Impl impl = new Impl("org.netbeans.editor.Bundle");
 
+    private class Impl implements LocaleSupport.Localizer
+    {
+        private ResourceBundle bundle;
+
+        public Impl(String bundleName)
+        {
+            bundle = ResourceBundle.getBundle(bundleName);
+        }
+
+        // Localizer
+        public String getString(String key)
+        {
+            return bundle.getString(key);
+        }
+    }
+    
     public BaseAction(String name) {
         this(name, 0);
     }
 
     public BaseAction(String name, int updateMask) {
         super(name);
+        LocaleSupport.addLocalizer(impl);
         this.updateMask = updateMask;
         // Initialize short description
         String key = LOCALE_DESC_PREFIX + name;

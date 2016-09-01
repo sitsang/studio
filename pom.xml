@@ -3,15 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>bns</groupId>
     <artifactId>studio</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>org-netbeans</groupId>
             <artifactId>org-netbeans-swing-laf-dark</artifactId>
 	    <version>1.0</version>
-	    <scope>system</scope>
-	    <systemPath>${basedir}/lib/org-netbeans-swing-laf-dark-1.0.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>org.jfree</groupId>
@@ -22,13 +20,6 @@
             <groupId>org.jfree</groupId>
             <artifactId>jfreechart</artifactId>
             <version>1.0.19</version>
-        </dependency>
-        <dependency>
-            <groupId>org.netbeans.external</groupId>
-            <artifactId>swing-layout</artifactId>
-            <version>1.0.4</version>
-            <systemPath>${basedir}/lib/swing-layout-1.0.4.jar</systemPath>
-            <scope>system</scope>
         </dependency>
         <dependency>
             <groupId>org.netbeans.api</groupId>
@@ -53,12 +44,17 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>vfsjfilechooser2</artifactId>
-            <version>2.x</version>
+            <version>0.2.8</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.swinglabs</groupId>
+            <artifactId>swing-layout</artifactId>
+            <version>1.0.3</version>
         </dependency>
     </dependencies>
     <properties>
@@ -115,6 +111,18 @@
                 </archive>
               </configuration>
             </plugin>
-	</plugins>
+    </plugins>
 </build>
+  <repositories>
+    <repository>
+      <id>in-project</id>
+      <name>In Project Repo</name>
+      <url>file://${project.basedir}/lib</url>
+    </repository>
+    <repository>
+        <id>netbeans</id>
+        <name>netbeans</name>
+        <url>http://bits.netbeans.org/maven2/</url>
+    </repository>
+  </repositories>
 </project>

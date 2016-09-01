@@ -1767,7 +1767,7 @@ public class Studio extends JPanel implements Observer,WindowListener {
                     Server[] servers = Config.getInstance().getServers();
 
                     if (servers.length > 0)  {
-                        for (int i = 0; i < servers.length || offset == -1; ++i) {
+                        for (int i = 0; i <= servers.length && (i < servers.length || offset == -1); ++i) {
                             try {
                                 setServer(servers[i]);
                                 offset = i;
